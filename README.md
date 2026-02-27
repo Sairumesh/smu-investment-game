@@ -150,8 +150,8 @@ The backend enforces valid sums, waits for all `n` submissions, and then writes 
 
 ## Deployment plan
 
-- **API (FastAPI + Postgres)**: Render (free tier) web service, points to Neon `DATABASE_URL`, enables keep-alive and SSE-friendly timeout. _(URL: TODO)_
-- **Frontend (Vite app)**: Vercel or Netlify static deploy; build with `npm run build`, configure `VITE_API_BASE_URL` to the Render URL. _(URL: TODO)_
+- **API (FastAPI + Postgres)**: Render web service backed by Neon. Live at https://smu-investment-game-1.onrender.com/ (health check: `/health`).
+- **Frontend (Vite app)**: Vercel deploy that builds with `npm run build` and sets `VITE_API_BASE_URL=https://smu-investment-game-1.onrender.com`. Live at https://smu-investment-game-phi.vercel.app/
 - **Observability**: Enable Render logs and Neon connection monitor; add health probe at `/health`.
 
 ## Quick demo steps
