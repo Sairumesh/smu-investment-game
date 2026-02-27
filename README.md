@@ -153,6 +153,8 @@ The backend enforces valid sums, waits for all `n` submissions, and then writes 
 - **API (FastAPI + Postgres)**: Render web service backed by Neon. Live at https://smu-investment-game-1.onrender.com/ (health check: `/health`).
 - **Frontend (Vite app)**: Vercel deploy that builds with `npm run build` and sets `VITE_API_BASE_URL=https://smu-investment-game-1.onrender.com`. Live at https://smu-investment-game-phi.vercel.app/
 - **Observability**: Enable Render logs and Neon connection monitor; add health probe at `/health`.
+- **Free tier note**: Render’s free dynos sleep after inactivity, so the first request after a long idle period may incur a cold-start delay (up to ~60s).
+- **Repository**: https://github.com/Sairumesh/smu-investment-game
 
 ## Quick demo steps
 
